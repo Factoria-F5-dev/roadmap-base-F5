@@ -6,7 +6,7 @@ body {
     position: sticky;
     top: 0;
     height: 100vh;
-    background-color: #faf9f8;
+    background-color: #ff4700;
     overflow-y: auto;
 }
 
@@ -16,11 +16,18 @@ body {
 }
 
 .nav-link {
-    color: #495057;
+    color: #030303;
+    border-radius: 5px;
+
 }
 
 .nav-link:hover {
     background-color: #e9ecef;
+    color:black
+}
+
+.nav-title {
+    color:rgb(11, 11, 11);
 }
 
 .card {
@@ -138,7 +145,8 @@ body {
     background-color: #adcbf9!important;
 }
 
-a {text-decoration: none;}
+a {
+    text-decoration: none;}
 
 .card-text{
     margin: 15px 8px;
