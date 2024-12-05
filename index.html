@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bootcamp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="sidebar-content">
+                    <h1 id="nav-title" class="h3 mb-4 px-3">Bootcamp</h1>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" href="#roadmap"><i class="bi bi-map me-2"></i>Roadmap</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="container section-container mt-4">
+                    <div class="row g-4">
+                        <div class="col-md-12" id="roadmap">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-map me-2"></i> Roadmap
+                                    </h5>
+                                    <div id="generate">
+                                        <label for="weeks">Semanas:</label>
+                                        <input type="number" id="weeks" min="1" max="52" />
+                                        <button onclick="generateGantt()">Generar</button>
+                                    </div>
+                                    <!-- Leyenda-->
+                                    <div class="row mb-4">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                              
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="badge temas">
+                                                    <i class="bi bi-book-fill"></i> Temas 
+                                                </span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="badge certificate-course">
+                                                    <i class="bi bi-arrow-return-right"></i>
+                                                    <i class="bi bi-bookmark-check"></i>  cursos-certificaciones
+                                                </span>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <span class="badge project">
+                                                    <i class="bi bi-briefcase-fill"></i> | <i
+                                                        class="bi bi-people-fill"></i> Proyectos 
+                                                </span>
+                                            </li>
+                                           
+                                        </ul>
+                                    </div>
+                                    <div class="gantt-container">
+                                        <table id="gantt-table"></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pildoras -->
+                        <!-- <div class="col-12" id="pildoras">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-megaphone"></i> Píldoras
+                                    </h5>
+                                    <div>
+                                        Las píldoras se asignarán la primera semana, se apuntarán en el calendario y se recomienda que cumplan con lo siguiente:
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <ul>
+                                            <li>Que tenga un poco de inglés (hablado no solo en la presentación)</li>
+                                            <li>Que tenga parte teórica y parte práctica. Énfasis en la práctica</li>
+                                            <li>Tiempo mínimo 1 hora</li>
+                                            <li>Se recomienda crear un repositorio en Github y publicar un artículo en Medium</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <!-- Calendar -->
+
+                        <!-- <div class="col-12" id="calendar">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-calendar me-2"></i> Calendario
+                                    </h5>
+                                    <div class="ratio ratio-16x9">
+                                        <iframe
+                                            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FMadrid&src=Y18zMDQ4MjU4NDYxYWE5MTk2YzE3YjgyNDc4OTk5NDk2MzNjNzMzZDk4MzhlZjFhZTQ1YzMzZTQ5ZDRkZGU5ZGZmQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%234285F4"
+                                            style="border:solid 1px #777" width="800" height="600" frameborder="0"
+                                            scrolling="no">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Horario -->
+                        <!-- <div class="col-12" id="horario">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-clock"></i> Horario
+                                    </h5>
+                                    <div >
+                                        En el Google Calendar encontraran la hora de inicio y fin de la clase, tanto para los días presenciales como para los días online, sin embargo les recordamos:
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <ul>
+                                            <li>La puntualidad es importante, recuerden que ingrean a las: 8:30</li>
+                                            <li>Tienen dos descansos de 15 minutos cada uno durante la jornada:
+                                                <ul>
+                                                    <li>A las 11:00 de la mañana</li>
+                                                    <li>A las 13:00 de la mañana</li>
+                                                </ul>
+                                            </li>
+                                            <li> Descansar también es importante, recuerden que finalizan a las 15:30</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Quick Links Card -->
+                        <!-- <div class="col-md-12" id="link">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-lightning-charge"></i> Quick Links
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-primary" data-link="zoom">
+                                                    <a href="https://zoom.us/j/your-meeting-id" target="_blank">
+                                                        <i class="bi bi-camera-video me-2"></i> Zoom Meeting
+                                                    </a>
+                                                </button>
+                                                <button class="btn btn-outline-primary" data-link="classroom">
+                                                    <a href="https://zoom.us/j/your-meeting-id" target="_blank">
+                                                        <i class="bi bi-grid-3x3-gap me-2"></i> Google Classroom
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-primary" data-link="zoom">
+                                                    <a href="https://zoom.us/j/your-meeting-id" target="_blank">
+                                                        <i class="bi bi-discord me-2"></i> Discord
+                                                    </a>
+                                                </button>
+                                                <button class="btn btn-outline-primary" data-link="classroom">
+                                                    <a href="https://github.com/Factoria-F5-dev" target="_blank">
+                                                        <i class="bi bi-github me-2"></i> Github
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script  src="script.js"></script>
+</body>
+
+</html>
