@@ -18,8 +18,8 @@ const bootcampData = {
         {
             type: "Proyecto",
             name: "project name",
-            start: 2,
-            end: 3,
+            start: 1,
+            end: 1,
         },
       
     ]
