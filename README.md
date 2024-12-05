@@ -1,5 +1,5 @@
 # Repositorio base para crear dashboard de estudiantes y mapa de ruta de bootcamp 
-<img src="">
+<img src="./img/roadmap_base.PNG">
 
 Este proyecto consiste en un dashboard de estudiantes y una visualización del Mapa de Ruta del Bootcamp. Está diseñado para proporcionar a los estudiantes un acceso fácil a enlaces y recursos importantes, así como una representación visual del plan de estudios del bootcamp.
 
