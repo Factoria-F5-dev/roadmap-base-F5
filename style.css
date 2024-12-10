@@ -4,13 +4,23 @@
     --principal-3: #FFFFFF;
     --complementario-1: #9C9C9C;
     --complementario-2:#FFA37F;
+
+    /* colores fuera de la paleta oficial */
+    --complementario-1-light: #e8e5e5;
+    --green-f5:#c7fd95;
+    --purple-f5: #6f42c1;
+    --purple-light-f5: #d1c4e9;
+
+
     --grey-f5: #897d7c;
     --grey-light-f5: #e2d2cd;
+     --bs-nav-link-hover-color:  #FFFFFF;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 .sidebar {
     position: sticky;
@@ -34,6 +44,12 @@ body {
 .nav-link:hover {
     background-color: var(--principal-3);
     color:black
+}
+
+ .nav {
+    /* ¿porqué da prioridad a el color de bootstrap? */
+    /* color:var(--principal-3) !important; */
+    --bs-nav-link-color-hover: var(--principal-3) !important;
 }
 
 
@@ -90,7 +106,7 @@ body {
 }
 
 .project {
-    background-color: var(--complementario-2);
+    background-color: var(--complementario-1-light);
 }
 
 .transicion {
@@ -127,11 +143,12 @@ body {
 }
 
 #gantt-table td.proyecto {
-    background-color: var(--complementario-2);;
+    background-color: var(--complementario-1-light
+);
 }
 
 #gantt-table td.block.proyecto {
-    background-color: var(--complementario-2);
+    background-color: var(--complementario-1-light);
 }
 
 #gantt-table td.empty {
