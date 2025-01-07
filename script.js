@@ -32,10 +32,16 @@ const bootcampData = {
             end: 1,
         },
       
-    ]
+    ],
+    links:  {
+        zoom: "https://zoom.us",
+        classroom: "https://classroom.google.com",
+        discord: "https://discord.com",
+        github: "https://github.com/Factoria-F5-dev"
+    }
 }
 
-const { weeks, stack, periods, modules } = bootcampData;
+const { weeks, stack, periods, modules, links } = bootcampData;
 
 //Generate the roadmap on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -67,10 +73,27 @@ function setWeeksValue(weeksNumber) {
     titleDocument.textContent = title;
  }
 
+//Generate the links
+function setLinks(links) {
+    const link_buttons = document.querySelectorAll(".btn[data-link]");
+
+    // Itera sobre los botones y asigna los enlaces dinámicamente
+    link_buttons.forEach(button => {
+        const linkType = button.getAttribute("data-link"); // Obtiene el valor de data-link
+        const anchor = button.querySelector("a"); // Encuentra el elemento <a> dentro del botón
+
+        if (links[linkType] && anchor) { // Si hay un enlace asociado y el <a> existe
+            anchor.href = links[linkType]; // Asigna el enlace al atributo href
+        }
+    })
+
+} 
+
 //Generate the Gantt chart
 function generateGantt() {
     setTitle(bootcampData.title);
     setWeeksValue(bootcampData.weeks);
+    setLinks(links);
     const weeks = document.getElementById("weeks").value;
     const table = document.getElementById("gantt-table");
     table.innerHTML = ""; 
@@ -99,7 +122,7 @@ function generateGantt() {
         table.innerHTML += moduleHeaderRow;
     }
 
-   // generate months 
+// generate months 
 
     let monthHeaderRow = "<tr><th>Meses</th>";
     for (let i = 1; i <= weeks; i += 4) {
@@ -108,8 +131,6 @@ function generateGantt() {
         monthHeaderRow += `<th colspan="${colspan}">Mes ${month}</th>`;
     }
    
-    
-
     monthHeaderRow += "</tr>";
     table.innerHTML += monthHeaderRow;
 
