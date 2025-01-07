@@ -41,7 +41,7 @@ const bootcampData = {
     }
 }
 
-const { weeks, stack, periods, modules, links } = bootcampData;
+const { weeks, stack, periods, modules, links, title } = bootcampData;
 
 //Generate the roadmap on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -131,7 +131,7 @@ function setStackTags(stack){
 
 //Generate the Gantt chart
 function generateGantt() {
-    setTitle(bootcampData.title);
+    setTitle(title);
     setWeeksValue(bootcampData.weeks);
     setLinks(links);
     setStackTags(stack);
