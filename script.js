@@ -2,6 +2,16 @@
 const bootcampData = {
     title: "Bootcamp name",
     weeks: 24,
+    periods: [
+        { name: "Periodo 1", start: 1, end: 7 },
+        { name: "Periodo 2", start: 8, end: 15 },
+        { name: "Periodo 3", start: 16, end: 24 }
+    ],
+    modules: [
+        { name: "Módulo 1", start: 1, end: 7 }, 
+        { name: "Módulo 2", start: 8, end: 15 }, 
+        { name: "Módulo 3", start: 16, end: 24 }
+    ],
     stack: [
         {
             type: "Tema",
@@ -25,7 +35,7 @@ const bootcampData = {
     ]
 }
 
-const { weeks, stack } = bootcampData;
+const { weeks, stack, periods, modules } = bootcampData;
 
 //Generate the roadmap on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,12 +75,41 @@ function generateGantt() {
     const table = document.getElementById("gantt-table");
     table.innerHTML = ""; 
 
+// generate period
+    if(periods.length > 0) {
+        let periodHeaderRow = "<tr><th>Periodo</th>";
+
+        periods.forEach(period => {
+            let colspan = period.end - period.start + 1;
+            periodHeaderRow += `<th colspan="${colspan}">${period.name}</th>`;
+        });
+        periodHeaderRow += "</tr>";
+        table.innerHTML = periodHeaderRow;
+    }
+//generate modules
+
+    if(modules.length > 0) {
+        let moduleHeaderRow = "<tr><th>Módulos</th>";
+
+        modules.forEach(module => {
+            let colspan = module.end - module.start + 1;
+            moduleHeaderRow += `<th colspan="${colspan}">${module.name}</th>`;
+        });
+        moduleHeaderRow += "</tr>";
+        table.innerHTML += moduleHeaderRow;
+    }
+
+   // generate months 
+
     let monthHeaderRow = "<tr><th>Meses</th>";
     for (let i = 1; i <= weeks; i += 4) {
         const month = Math.ceil(i / 4);
         let colspan = Math.min(4, weeks - i + 1); 
         monthHeaderRow += `<th colspan="${colspan}">Mes ${month}</th>`;
     }
+   
+    
+
     monthHeaderRow += "</tr>";
     table.innerHTML += monthHeaderRow;
 
