@@ -37,9 +37,12 @@ El proyecto está estructurado de la siguiente manera:
 
   ```javascript
   const bootcampData = {
-      title: "Bootcamp de Desarrollo Web",
-      weeks: 24,
-      stack: []
+    title: "Bootcamp name",
+    weeks: 24,
+    periods: [],
+    modules: [],
+    stack: [],
+    links:  {}
   }
    ````
   Dentro de dicho objeto encontrás el array `stack`.
