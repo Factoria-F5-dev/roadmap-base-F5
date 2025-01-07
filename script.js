@@ -89,11 +89,52 @@ function setLinks(links) {
 
 } 
 
+function setStackTags(stack){
+          
+            const list_tag_stack = document.querySelector(".list-inline");
+
+    
+            function createListItem(item) {
+        
+                const listItem = document.createElement("li");
+                listItem.classList.add("list-inline-item");
+                const badge = document.createElement("span");
+                badge.classList.add("badge");
+                
+
+                if (item.type === "Tema") {
+                    badge.classList.add("temas");
+                    badge.innerHTML = `<i class="bi bi-book-fill"></i> ${item.name}`;
+                } else if (item.type === "Course") {
+                    badge.classList.add("certificate-course");
+                    badge.innerHTML = `<i class="bi bi-arrow-return-right"></i> <i class="bi bi-bookmark-check"></i> ${item.name}`;
+                } else if (item.type === "Proyecto") {
+                    badge.classList.add("project");
+                    badge.innerHTML = `<i class="bi bi-briefcase-fill"></i> | <i class="bi bi-people-fill"></i> ${item.name}`;
+                } else if(item.type === "Transición") {
+                    badge.classList.add("transicion");
+                    badge.innerHTML = `<i class="bi bi-diagram-3-fill"></i> ${item.name}`
+                }
+
+    
+               
+                listItem.appendChild(badge);
+                return listItem;
+            }
+    
+            // Generar la lista dinámica
+            stack.forEach(item => {
+                const listItem = createListItem(item);
+                list_tag_stack.appendChild(listItem);
+            });
+}
+
 //Generate the Gantt chart
 function generateGantt() {
     setTitle(bootcampData.title);
     setWeeksValue(bootcampData.weeks);
     setLinks(links);
+    setStackTags(stack);
     const weeks = document.getElementById("weeks").value;
     const table = document.getElementById("gantt-table");
     table.innerHTML = ""; 
