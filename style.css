@@ -21,6 +21,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* sidebar */
 
 .sidebar {
     position: sticky;
@@ -33,6 +34,15 @@ body {
 .sidebar-content {
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+.nav {
+    /* ¿porqué da prioridad a el color de bootstrap? */
+    /* color:var(--principal-3) !important; */
+    --bs-nav-link-color-hover: var(--principal-3);
+}
+
+.nav-title {
+    color: var(--principal-3);
 }
 
 .nav-link {
@@ -47,27 +57,20 @@ body {
     color:black
 }
 
- .nav {
-    /* ¿porqué da prioridad a el color de bootstrap? */
-    /* color:var(--principal-3) !important; */
-    --bs-nav-link-color-hover: var(--principal-3);
-}
-
-.nav-title {
-    color: var(--principal-3);
-}
+/* main */
 
 .section-title{
     color:var(--principal-1);
+}
+
+.section-container {
+    margin-bottom: 20px;
 }
 
 .card {
     height: 100%;
 }
 
-.section-container {
-    margin-bottom: 20px;
-}
 
 .gantt-container {
     overflow-x: auto;
@@ -179,7 +182,3 @@ body {
 a {
     text-decoration: none;}
 
-.card-text{
-    margin: 15px 8px;
-    color: #b71422;
-}
