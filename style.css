@@ -36,7 +36,8 @@ body {
 }
 
 .nav-link {
-    color: #030303;
+    color: var( --principal-3);
+    /* font-size: large; */
     border-radius: 5px;
 
 }
@@ -49,12 +50,11 @@ body {
  .nav {
     /* ¿porqué da prioridad a el color de bootstrap? */
     /* color:var(--principal-3) !important; */
-    --bs-nav-link-color-hover: var(--principal-3) !important;
+    --bs-nav-link-color-hover: var(--principal-3);
 }
 
-
 .nav-title {
-    color: var(--principal-2);
+    color: var(--principal-3);
 }
 
 .section-title{
@@ -143,8 +143,7 @@ body {
 }
 
 #gantt-table td.proyecto {
-    background-color: var(--complementario-1-light
-);
+    background-color: var(--complementario-1-light);
 }
 
 #gantt-table td.block.proyecto {
