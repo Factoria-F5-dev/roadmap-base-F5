@@ -41,6 +41,7 @@ const bootcampData = {
       
     ],
     links:  {
+        googleCalendar: "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FMadrid&src=&color=%234285F4",
         zoom: "https://zoom.us",
         classroom: "https://classroom.google.com",
         discord: "https://discord.com",
@@ -82,7 +83,7 @@ function setWeeksValue(weeksNumber) {
 
 //Generate the links
 function setLinks(links) {
-    const link_buttons = document.querySelectorAll(".btn[data-link]");
+    const link_buttons = document.querySelectorAll("[data-link]");
 
     // Itera sobre los botones y asigna los enlaces dinámicamente
     link_buttons.forEach(button => {
@@ -91,6 +92,10 @@ function setLinks(links) {
 
         if (links[linkType] && anchor) { // Si hay un enlace asociado y el <a> existe
             anchor.href = links[linkType]; // Asigna el enlace al atributo href
+        }
+        
+        if(linkType === "googleCalendar") {
+           button.setAttribute('src', links[linkType])
         }
     })
 
