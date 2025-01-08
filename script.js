@@ -91,42 +91,41 @@ function setLinks(links) {
 
 function setStackTags(stack){
           
-            const list_tag_stack = document.querySelector(".list-inline");
+    const list_tag_stack = document.querySelector(".list-inline");
+    const types = [...new Set(stack.map(item => item.type))];
 
-    
-            function createListItem(item) {
+    function createListItem(item) {
+        const listItem = document.createElement("li");
+        listItem.classList.add("list-inline-item");
+        const badge = document.createElement("span");
+        badge.classList.add("badge");
         
-                const listItem = document.createElement("li");
-                listItem.classList.add("list-inline-item");
-                const badge = document.createElement("span");
-                badge.classList.add("badge");
-                
 
-                if (item.type === "Tema") {
-                    badge.classList.add("temas");
-                    badge.innerHTML = `<i class="bi bi-book-fill"></i> ${item.name}`;
-                } else if (item.type === "Course") {
-                    badge.classList.add("certificate-course");
-                    badge.innerHTML = `<i class="bi bi-arrow-return-right"></i> <i class="bi bi-bookmark-check"></i> ${item.name}`;
-                } else if (item.type === "Proyecto") {
-                    badge.classList.add("project");
-                    badge.innerHTML = `<i class="bi bi-briefcase-fill"></i> | <i class="bi bi-people-fill"></i> ${item.name}`;
-                } else if(item.type === "Transición") {
-                    badge.classList.add("transicion");
-                    badge.innerHTML = `<i class="bi bi-diagram-3-fill"></i> ${item.name}`
-                }
+        if (item === "Tema") {
+            badge.classList.add("temas");
+            badge.innerHTML = `<i  class="bi bi-book-fill"></i> tema`;
+        } else if (item === "Course") {
+            badge.classList.add("certificate-course");
+            badge.innerHTML = `<i class="bi bi-arrow-return-right"></i> <i class="bi bi-bookmark-check"></i> certificado o curso`;
+        } else if (item === "Proyecto") {
+            badge.classList.add("project");
+            badge.innerHTML = `<i class="bi bi-briefcase-fill"></i> | <i class="bi bi-people-fill"></i> project`;
+        } else if(item === "Transición") {
+            badge.classList.add("transicion");
+            badge.innerHTML = `<i class="bi bi-diagram-3-fill"></i> transición-flexible`
+        }
 
-    
-               
-                listItem.appendChild(badge);
-                return listItem;
-            }
-    
-            // Generar la lista dinámica
-            stack.forEach(item => {
-                const listItem = createListItem(item);
-                list_tag_stack.appendChild(listItem);
-            });
+
+       
+        listItem.appendChild(badge);
+        return listItem;
+    }
+
+    // Generar la lista dinámica
+    types.forEach(item => {
+        const listItem = createListItem(item);
+        list_tag_stack.appendChild(listItem);
+    });
 }
 
 //Generate the Gantt chart
