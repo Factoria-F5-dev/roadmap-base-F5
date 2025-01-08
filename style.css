@@ -2,20 +2,22 @@
     --principal-1: #FF4700; 
     --principal-2: #020100;
     --principal-3: #FFFFFF;
-    --complementario-1: #9C9C9C;
+    --complementario-1: #9c9c9c;
     --complementario-2:#FFA37F;
+   
 
     /* colores fuera de la paleta oficial */
-    --complementario-1-light: #e8e5e5;
+    --complementario-1-light: #f9dccd;
     --complementario-1-extra-light: #f5f2f2;
     --green-f5:#c7fd95;
     --purple-f5: #6f42c1;
     --purple-light-f5: #d1c4e9;
+    --blue-light-f5: #c0f6f8;
 
 
     --grey-f5: #897d7c;
     --grey-light-f5: #e2d2cd;
-     --bs-nav-link-hover-color:  #FFFFFF;
+    --bs-nav-link-hover-color: #FFFFFF;
 }
 
 body {
@@ -73,6 +75,7 @@ body {
 }
 
 
+
 .gantt-container {
     overflow-x: auto;
     width: 100%;
@@ -93,7 +96,7 @@ body {
 }
 
 #gantt-table th {
-    background-color: var(  --complementario-1-extra-light);
+    background-color: var(--complementario-1-extra-light); 
     font-size: 10px;
     position: sticky;
     top: 0;
@@ -113,16 +116,22 @@ body {
     background-color: var(--complementario-1-light);
 }
 
+
 .transicion {
-    background-color: #80808096;
+    background-color: var(--purple-light-f5);
 }
 
 .temas {
-    background-color: var(--principal-1);
+    background-color: var(--complementario-2);
 }
 
+a {
+    color: #ffffff; 
+    text-decoration: none;
+} 
+
 .certificate-course {
-    background-color: var(--complementario-2);
+    background-color: var(--blue-light-f5);
 }
 
 .badge {
@@ -131,19 +140,19 @@ body {
 }
 
 #gantt-table td.block.tema {
-    background-color: var(--principal-1);
+    background-color: var(--complementario-2);
 }
 
 #gantt-table td.tema {
-    background-color: var(--principal-1);
+    background-color: var(--complementario-2);
 }
 
 #gantt-table td.block.transicion {
-    background-color: #80808096;
+    background-color: var(--purple-light-f5);
 }
 
 #gantt-table td.transicion {
-    background-color: #80808096;
+    background-color: var(--purple-light-f5);
 }
 
 #gantt-table td.proyecto {
@@ -180,6 +189,8 @@ body {
     background-color: #adcbf9;
 }
 
-a {
-    text-decoration: none;}
+.btn a{
+    color:var(--bs-primary); 
+}
+
 

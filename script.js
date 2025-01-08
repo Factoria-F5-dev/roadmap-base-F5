@@ -14,6 +14,12 @@ const bootcampData = {
     ],
     stack: [
         {
+            type: "Proyecto",
+            name: "project name",
+            start: 1,
+            end: 1,
+        },
+        {
             type: "Tema",
             name: "tema name",
             start: 1,
@@ -25,12 +31,13 @@ const bootcampData = {
             start: 1,
             end: 1,
         },
+
         {
-            type: "Proyecto",
-            name: "project name",
+            type: "Transición",
+            name: "transición name",
             start: 1,
             end: 1,
-        },
+        }
       
     ],
     links:  {
