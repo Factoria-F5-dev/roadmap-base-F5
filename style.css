@@ -7,6 +7,7 @@
 
     /* colores fuera de la paleta oficial */
     --complementario-1-light: #e8e5e5;
+    --complementario-1-extra-light: #f5f2f2;
     --green-f5:#c7fd95;
     --purple-f5: #6f42c1;
     --purple-light-f5: #d1c4e9;
@@ -92,7 +93,7 @@ body {
 }
 
 #gantt-table th {
-    background-color: var(--principal-3);
+    background-color: var(  --complementario-1-extra-light);
     font-size: 10px;
     position: sticky;
     top: 0;
