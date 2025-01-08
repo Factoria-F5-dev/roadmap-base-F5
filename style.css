@@ -9,7 +9,7 @@
     /* colores fuera de la paleta oficial */
     --complementario-1-light: #f9dccd;
     --complementario-1-extra-light: #f5f2f2;
-    --green-f5:#c7fd95;
+    --green-f5:#9af6c2;
     --purple-f5: #6f42c1;
     --purple-light-f5: #d1c4e9;
     --blue-light-f5: #c0f6f8;
@@ -18,6 +18,12 @@
     --grey-f5: #897d7c;
     --grey-light-f5: #e2d2cd;
     --bs-nav-link-hover-color: #FFFFFF;
+    
+    /* tags colors */
+    --tag-tema: var(--complementario-1-light);
+    --tag-project: var(--complementario-2);
+    --tag-transicion: var(--purple-light-f5);
+    --tag-course: var(--blue-light-f5);
 }
 
 body {
@@ -113,16 +119,16 @@ body {
 }
 
 .project {
-    background-color: var(--complementario-1-light);
+    background-color: var(--tag-project);
 }
 
 
 .transicion {
-    background-color: var(--purple-light-f5);
+    background-color: var(--tag-transicion);
 }
 
 .temas {
-    background-color: var(--complementario-2);
+    background-color: var(--tag-tema);
 }
 
 a {
@@ -131,7 +137,7 @@ a {
 } 
 
 .certificate-course {
-    background-color: var(--blue-light-f5);
+    background-color: var(--tag-course);
 }
 
 .badge {
@@ -140,27 +146,27 @@ a {
 }
 
 #gantt-table td.block.tema {
-    background-color: var(--complementario-2);
+    background-color: var(--tag-tema);
 }
 
 #gantt-table td.tema {
-    background-color: var(--complementario-2);
+    background-color: var(--tag-tema);
 }
 
 #gantt-table td.block.transicion {
-    background-color: var(--purple-light-f5);
+    background-color: var(--tag-transicion);
 }
 
 #gantt-table td.transicion {
-    background-color: var(--purple-light-f5);
+    background-color: var(--tag-transicion);
 }
 
 #gantt-table td.proyecto {
-    background-color: var(--complementario-1-light);
+    background-color: var(--tag-project);
 }
 
 #gantt-table td.block.proyecto {
-    background-color: var(--complementario-1-light);
+    background-color: var(--tag-project);
 }
 
 #gantt-table td.empty {
